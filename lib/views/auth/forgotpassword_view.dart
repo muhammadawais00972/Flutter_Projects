@@ -10,14 +10,16 @@ class ForgotpasswordView extends StatefulWidget {
 }
 
 class _ForgotpasswordViewState extends State<ForgotpasswordView> {
-  final controller = Get.find<ForgotPasswordController>();
+  // final controller = Get.find<ForgotPasswordController>();
+  final controller = Get.put(ForgotPasswordController());
 
-  final TextEditingController _email=TextEditingController();
+
+  // final TextEditingController _email=TextEditingController();
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    _email.dispose();
+    controller.email.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -63,18 +65,18 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
                     height: 100,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: AppTheme.primaryColor.withOpacity(0.1),
+                      color: AppTheme.successColor.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(50)
                     ),
                     child: Icon(Icons.lock_reset_rounded,
                       size: 50,
-                      color: AppTheme.primaryColor,
+                      color: AppTheme.successColor,
                     ),
                   ),),
                   SizedBox(height: 60,),
 
                   TextFormField(
-                    controller: _email,
+                    controller: controller.email,
                     keyboardType: TextInputType.emailAddress,
 
                     decoration: InputDecoration(

@@ -46,7 +46,7 @@ class _LoginViewState extends State<LoginView> {
                       width: 80,
                       height: 80,
                       decoration: BoxDecoration(
-                          color: AppTheme.primaryColor,
+                          color: AppTheme.successColor,
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
@@ -187,7 +187,7 @@ class _LoginViewState extends State<LoginView> {
                             child:Text(
                               'Forgot Password?',
                               style: TextStyle(
-                                color: AppTheme.primaryColor,
+                                color: AppTheme.successColor,
 
                               ),
                             )
@@ -232,7 +232,7 @@ class _LoginViewState extends State<LoginView> {
                             child: Text(
                               'Sign Up',
                               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: AppTheme.primaryColor,
+                                color: AppTheme.successColor,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),

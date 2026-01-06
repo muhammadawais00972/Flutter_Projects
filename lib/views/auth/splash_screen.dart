@@ -87,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                           ]
                       ),
                       child: Icon(Icons.chat_bubble_outlined,
-                        color: AppTheme.primaryColor,
+                        color: AppTheme.successColor,
                         size: 60,
                       ),
                     ),

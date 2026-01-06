@@ -77,7 +77,7 @@ class AppTheme{
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: primaryColor,
+        backgroundColor: successColor,
         foregroundColor: Colors.white,
         elevation: 0,
         padding: EdgeInsets.symmetric(horizontal: 32,vertical: 16),
@@ -109,15 +109,15 @@ class AppTheme{
 
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: borderColor),
+        borderSide: BorderSide(color: successColor),
     ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: primaryColor,width: 2),
+        borderSide: BorderSide(color: successColor,width: 2),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: borderColor,width: 2),
+        borderSide: BorderSide(color:successColor,width: 2),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),

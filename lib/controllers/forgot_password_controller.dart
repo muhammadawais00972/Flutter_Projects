@@ -54,7 +54,7 @@ class ForgotPasswordController extends GetxController{
 
   }
   void goBackToLogin(){
-    Get.back;
+    Get.back();
   }
   void resendEmail(){
   _emailsent.value=false;
@@ -68,6 +68,7 @@ class ForgotPasswordController extends GetxController{
   if(!GetUtils.isEmail(value!)){
     return 'please enter the email';
   }
+  return null;
 
   }
 }

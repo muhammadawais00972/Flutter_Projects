@@ -16,18 +16,19 @@ class FirestoreService {
     }
   }
 
-  Future<UserModel?> getUser(String userId) async {
-    try {
-      final doc =
-      await _firestore.collection('users').doc(userId).get();
+  Future<UserModel?> getUser(String uid) async {
+    final doc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .get();
 
-      if (!doc.exists || doc.data() == null) return null;
-
-      return UserModel.fromMap(doc.data()!, doc.id);
-    } catch (e) {
-      throw Exception('Failed to get user: $e');
+    if (doc.exists) {
+      return UserModel.fromMap(doc.data()!,doc.id);
+    } else {
+      return null;
     }
   }
+
 
   Future<void> updateUserOnlineStatus(
       String userId, bool isOnline) async {

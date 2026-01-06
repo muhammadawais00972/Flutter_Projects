@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashchat/models/user_model.dart';
 import 'package:flashchat/services/auth_service.dart';
 import 'package:get/get.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flashchat/routes/app_routes.dart';
-
+import 'package:flashchat/services/firestore_service.dart';
 
 class AuthController extends GetxController {
   final AuthService _authService = AuthService();

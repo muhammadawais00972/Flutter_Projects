@@ -13,14 +13,6 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
   // final controller = Get.find<ForgotPasswordController>();
   final controller = Get.put(ForgotPasswordController());
 
-
-  // final TextEditingController _email=TextEditingController();
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    controller.email.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

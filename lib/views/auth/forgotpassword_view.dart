@@ -10,7 +10,8 @@ class ForgotpasswordView extends StatefulWidget {
 }
 
 class _ForgotpasswordViewState extends State<ForgotpasswordView> {
-  final controller=Get.put(ForgotPasswordController());
+  final controller = Get.find<ForgotPasswordController>();
+
   final TextEditingController _email=TextEditingController();
   @override
   void dispose() {
@@ -55,8 +56,6 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: AppTheme.textSecondaryColor,
                       ),
-
-
                     ),
                   ),
                   SizedBox(height: 60,),
@@ -73,7 +72,6 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
                     ),
                   ),),
                   SizedBox(height: 60,),
-
 
                   TextFormField(
                     controller: _email,
@@ -92,15 +90,40 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
 
                   ),
                   SizedBox(height: 32,),
-                  Obx(()=>SizedBox(
+                  // Obx(()=>SizedBox(
+                  //   width: double.infinity,
+                  //   child: ElevatedButton.icon(
+                  //       onPressed: ()=>controller.isLoading?null:controller.sentPassword(),
+                  //
+                  //       label: Text(
+                  //         controller.isLoading?
+                  //       )),
+                  // ))
+                  Obx(() => SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
-                        onPressed: ()=>controller.isLoading?null:controller.sentPassword(),
-
-                        label: Text(
-                          controller.isLoading?
-                        )),
-                  ))
+                      onPressed: controller.isLoading
+                          ? null
+                          : () {
+                        if (controller.formkey.currentState!.validate()) {
+                          controller.sentPassword();
+                        }
+                      },
+                      icon: controller.isLoading
+                          ? SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 2,
+                        ),
+                      )
+                          : Icon(Icons.send),
+                      label: Text(
+                        controller.isLoading ? "Sending..." : "Send Link",
+                      ),
+                    ),
+                  )),
 
                 ],
               ),

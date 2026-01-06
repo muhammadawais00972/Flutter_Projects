@@ -126,6 +126,26 @@ class _ForgotpasswordViewState extends State<ForgotpasswordView> {
                       ),
                     ),
                   )),
+                  SizedBox(height: 32,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Remember your Password",
+                        style: Theme.of(Get.context!).textTheme.bodyMedium,
+                      ),
+                      SizedBox(width: 8,),
+                      GestureDetector(
+                        onTap: controller.goBackToLogin,
+                        child: Text(
+                          "Sign in?",
+                          style: Theme.of(Get.context!).textTheme.bodyMedium?.copyWith(
+                            color: AppTheme.successColor,
+                          )
+                        ),
+                      )
+                    ],
+                  )
 
                 ],
               ),

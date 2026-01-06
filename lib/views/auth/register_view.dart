@@ -249,7 +249,7 @@ class _RegisterViewState extends State<RegisterView> {
                               child:Text(
                                 'Forgot Password?',
                                 style: TextStyle(
-                                  color: AppTheme.primaryColor,
+                                  color: AppTheme.successColor,
 
                                 ),
                               )
@@ -295,7 +295,7 @@ class _RegisterViewState extends State<RegisterView> {
                               child: Text(
                                 'Sign In',
                                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                  color: AppTheme.primaryColor,
+                                  color: AppTheme.successColor,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
